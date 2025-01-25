@@ -8,19 +8,6 @@ export default {
 		const { method } = request;
 		const { pathname } = new URL(request.url);
 
-		if (method === "OPTIONS") {
-			return new Response(null, {
-				headers: {
-					"Access-Control-Allow-Origin": "*",
-					"Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
-					"Access-Control-Max-Age": "86400",
-					"Access-Control-Allow-Headers": request.headers.get(
-						"Access-Control-Request-Headers",
-					)
-				},
-			});
-		}
-
 		/**
 		 * JDK版本信息接口
 		 */
